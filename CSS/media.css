@@ -29,6 +29,7 @@
     }
 
     .sidebar {
+        padding-inline: 1.25rem;
         width: 80px;
         height: 100vh;
     }
@@ -142,5 +143,6 @@
     .child-6 {
         row-gap: 20px;
     }
+
 
 }
