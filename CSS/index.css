@@ -278,10 +278,10 @@ a {
     grid-template-areas:
         "header header header"
         "income expense current-balance"
-        "child-1 child-2 child-2"
-        "child-3 child-2 child-2"
-        "child-4 child-5  child-7"
-        "child-4 child-6  child-7"
+        "accounts-card last-deals last-deals"
+        "monthly-bills last-deals last-deals"
+        "divided-balance income-vs-expense  pay-methods"
+        "divided-balance summeryofacc  pay-methods"
     ;
     padding: 2rem;
     align-content: start;
@@ -456,16 +456,6 @@ a {
     grid-area: expense;
 }
 
-/* .main .widgets{
-    grid-area: widgets;
-    
-    grid-template-areas: 
-    "child-1 child-2 child-2"
-    "child-3 child-2 child-2"
-    "child-4 child-5 child-7"
-    "child-4 child-6 child-7"
-    ;
-} */
 
 
 .main .accounts {
@@ -532,58 +522,58 @@ a {
     color: var(--color-gray);
 }
 
-.main .child-1 .show-all p {
+.main .accounts-card .show-all p {
     padding: 12px;
     font-size: 20px;
     color: #2b52f3;
     font-weight: 500;
 }
 
-.main .child-1 .show-all p:hover {
+.main .accounts-card .show-all p:hover {
     color: #2040c1;
 }
 
-.child-1,
-.child-1~div {
+.accounts-card,
+.accounts-card~div {
     box-shadow: var(--box-shadow);
     border: var(--border-1-b);
 }
 
-.child-1 {
+.accounts-card {
     background-color: var(--secondry-bg-w);
-    grid-area: child-1;
+    grid-area: accounts-card;
 }
 
-.child-2 {
+.last-deals {
     background-color: var(--secondry-bg-w);
-    grid-area: child-2;
+    grid-area: last-deals;
 }
 
-.child-2 {
+.last-deals {
     overflow-x: auto;
     display: flex;
     flex-direction: column;
     row-gap: 0px;
 }
 
-.child-2 table tr td .img {
+.last-deals table tr td .img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
 }
 
-.child-2 table {
+.last-deals table {
     min-width: 600px;
     border-collapse: collapse;
 }
 
-.child-2 table th {
+.last-deals table th {
     text-align: start;
     padding-block: .625rem;
     border-bottom: .0155rem solid rgba(180, 180, 180, 0.2);
 }
 
-.child-2 table tr td {
+.last-deals table tr td {
     border-bottom: .0155rem solid rgba(180, 180, 180, 0.2);
     font-size: .9375rem;
     text-align: start;
@@ -591,21 +581,21 @@ a {
     padding-block: 1.25rem;
 }
 
-.child-2 table tr td:nth-child(1) .in-td p {
+.last-deals table tr td:nth-child(1) .in-td p {
     color: gray;
     font-size: .8375rem;
 }
 
-.child-2 table tr td:nth-child(1) .in-td img {
+.last-deals table tr td:nth-child(1) .in-td img {
     border-radius: 50%;
 }
 
-.child-2 table tr td:nth-child(3) p {
+.last-deals table tr td:nth-child(3) p {
     color: gray;
 }
 
-.child-2 table tr td:nth-child(2) .in-td,
-.child-2 table tr td:nth-child(4) p {
+.last-deals table tr td:nth-child(2) .in-td,
+.last-deals table tr td:nth-child(4) p {
     font-size: .6rem;
     width: fit-content;
     padding: .2rem .6rem;
@@ -613,88 +603,88 @@ a {
     border-radius: var(--boredr-rad);
 }
 
-.child-2 table tr td:nth-child(5) {
+.last-deals table tr td:nth-child(5) {
     font-weight: 600;
 }
 
-.child-2 table tr:nth-child(1) td:nth-child(2) .in-td,
-.child-2 table tr:nth-child(5) td:nth-child(2) .in-td,
-.child-2 table tr td:nth-child(4) p {
+.last-deals table tr:nth-child(1) td:nth-child(2) .in-td,
+.last-deals table tr:nth-child(5) td:nth-child(2) .in-td,
+.last-deals table tr td:nth-child(4) p {
     background-color: #b4e8c970;
 }
 
-.child-2 table tr:nth-child(6) td:nth-child(4) p {
+.last-deals table tr:nth-child(6) td:nth-child(4) p {
     background-color: rgb(242, 228, 172);
     color: rgb(201, 136, 16);
 }
 
-.child-2 table tr:nth-child(1) td:nth-child(5) p,
-.child-2 table tr:nth-child(5) td:nth-child(5) p {
+.last-deals table tr:nth-child(1) td:nth-child(5) p,
+.last-deals table tr:nth-child(5) td:nth-child(5) p {
     color: #007b31;
 }
 
-.child-2 table tr:nth-child(2) td:nth-child(1) .img,
-.child-2 table tr:nth-child(2) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(2) td:nth-child(1) .img,
+.last-deals table tr:nth-child(2) td:nth-child(2) .in-td {
     background-color: #ffedd4;
     color: #7a3609;
 }
 
-.child-2 table tr:nth-child(3) td:nth-child(1) .img,
-.child-2 table tr:nth-child(3) td:nth-child(2) .in-td,
-.child-2 table tr:nth-child(7) td:nth-child(1) .img,
-.child-2 table tr:nth-child(7) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(3) td:nth-child(1) .img,
+.last-deals table tr:nth-child(3) td:nth-child(2) .in-td,
+.last-deals table tr:nth-child(7) td:nth-child(1) .img,
+.last-deals table tr:nth-child(7) td:nth-child(2) .in-td {
     background-color: #dbeafe;
     color: #0c69e4;
 }
 
-.child-2 table tr:nth-child(4) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(4) td:nth-child(2) .in-td {
     background-color: #f3e8ff;
     color: #6410bd;
 }
 
-.child-2 table tr:nth-child(6) td:nth-child(1) .img,
-.child-2 table tr:nth-child(6) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(6) td:nth-child(1) .img,
+.last-deals table tr:nth-child(6) td:nth-child(2) .in-td {
     background-color: #ffe2e2;
     color: #e30909;
 }
 
-.child-2 table tr:nth-child(8) td:nth-child(1) .img,
-.child-2 table tr:nth-child(8) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(8) td:nth-child(1) .img,
+.last-deals table tr:nth-child(8) td:nth-child(2) .in-td {
     background-color: #cffbff;
     color: #12939f;
 }
 
-.child-2 table tr:nth-child(9) td:nth-child(1) .img,
-.child-2 table tr:nth-child(9) td:nth-child(2) .in-td {
+.last-deals table tr:nth-child(9) td:nth-child(1) .img,
+.last-deals table tr:nth-child(9) td:nth-child(2) .in-td {
     background-color: #b4e8c970;
     color: #007b31;
 }
 
 
 
-.child-3 {
+.monthly-bills {
     background-color: var(--secondry-bg-w);
-    grid-area: child-3;
+    grid-area: monthly-bills;
 }
 
-.child-3 .price p:nth-child(1) {
+.monthly-bills .price p:nth-child(1) {
     font-size: 1.875rem;
     font-weight: 700;
 }
 
-.child-3 .price p:nth-child(2) {
+.monthly-bills .price p:nth-child(2) {
     color: gray;
     font-weight: 700;
 }
 
-.child-3 .bills {
+.monthly-bills .bills {
     /* padding: 20px; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: .9rem;
 }
 
-.child-3 .bills .bill {
+.monthly-bills .bills .bill {
     background-color: #f9fafb;
     padding: .625rem;
     --border-1-b: .05rem border: var(--border-1-b);
@@ -703,24 +693,24 @@ a {
     border-radius: var(--boredr-rad);
 }
 
-.child-3 .bills .bill p:nth-child(2) {
+.monthly-bills .bills .bill p:nth-child(2) {
     color: gray;
 }
 
-.child-3 .bills .bill p:nth-child(3) {
+.monthly-bills .bills .bill p:nth-child(3) {
     font-size: 1.125rem;
     font-weight: 700;
 }
 
-.child-3 .bills .bill p:nth-child(4) {
+.monthly-bills .bills .bill p:nth-child(4) {
     color: red;
 }
 
-.child-3 .bills .bill:nth-child(3) p:nth-child(4) {
+.monthly-bills .bills .bill:nth-child(3) p:nth-child(4) {
     color: #05ac48;
 }
 
-.child-3 .bill span {
+.monthly-bills .bill span {
 
     font-size: 15px;
     width: 30px;
@@ -731,32 +721,32 @@ a {
     border-radius: 20%;
 }
 
-.child-3 .bill p:nth-child(2) {
+.monthly-bills .bill p:nth-child(2) {
     font-size: .9rem;
     margin-top: .3125rem;
 }
 
-.child-3 .bill:nth-child(1) span {
+.monthly-bills .bill:nth-child(1) span {
     background-color: #dbeafe;
     color: #0d54b1;
 }
 
-.child-3 .bill:nth-child(2) span {
+.monthly-bills .bill:nth-child(2) span {
     background-color: #fef9c2;
     color: #a1940a;
 }
 
-.child-3 .bill:nth-child(3) span {
+.monthly-bills .bill:nth-child(3) span {
     background-color: #dbfce7;
     color: rgb(14, 165, 69);
 }
 
-.child-3 .bill:nth-child(4) span {
+.monthly-bills .bill:nth-child(4) span {
     background-color: #ffe2e2;
     color: rgb(186, 14, 14)
 }
 
-.child-3 .bill:nth-child(4) p:nth-child(4) {
+.monthly-bills .bill:nth-child(4) p:nth-child(4) {
     color: gray;
 }
 
@@ -772,73 +762,73 @@ a {
     border-radius: .625rem;
 }
 
-.child-4 {
+.divided-balance {
     background-color: var(--secondry-bg-w);
-    grid-area: child-4;
+    grid-area: divided-balance;
 }
 
-.child-4 .total {
+.divided-balance .total {
     border: .01px solid rgba(128, 128, 128, 0.212);
     border-radius: 1rem;
     background-color: #eef4ff;
 }
 
-.child-4 .total .one p:nth-child(1) {
+.divided-balance .total .one p:nth-child(1) {
     font-weight: 600;
     color: #0c69e4;
 }
 
-.child-4 .total .one p:nth-child(2) {
+.divided-balance .total .one p:nth-child(2) {
     font-weight: 700;
     color: #032a5d;
     font-size: 1.5rem;
 }
 
-.child-4 .total .two p:nth-child(1) {
+.divided-balance .total .two p:nth-child(1) {
     color: gray;
     text-align: right;
 }
 
-.child-4 .total .two p:nth-child(2) {
+.divided-balance .total .two p:nth-child(2) {
     color: gray;
     font-size: 18px;
     font-weight: 600;
     color: #05ac48;
 }
 
-.child-4 .total .used {
+.divided-balance .total .used {
     font-size: 12px;
-    color: gary;
+    color: gray;
 }
 
-.child-4 .part {
+.divided-balance .part {
     border: .01px solid rgba(128, 128, 128, 0.212);
     padding: 1.5rem 1.5rem;
     transition: transform .5s;
     font-weight: 600;
 }
 
-.child-4 .part .head .img {
+.divided-balance .part .head .img {
     width: 40px;
     height: 40px;
     border-radius: 10px;
 }
 
 
-.child-4 .part .head .desc p:nth-child(1) {
+.divided-balance .part .head .desc p:nth-child(1) {
     font-size: 1rem;
 }
 
-.child-4 .part .head .desc p:nth-child(2) {
+.divided-balance .part .head .desc p:nth-child(2) {
     font-size: .7rem;
     color: gray;
 }
 
-.child-4 .part .saved p:nth-child(1) {
+.divided-balance .part .saved p:nth-child(1) {
     font-size: 1rem;
 }
 
-.child-4 .part .saved p:nth-child(2) {
+.divided-balance .part .saved p:nth-child(2) {
     font-size: .7rem;
     background-color: #dcfce7;
     color: #007b31;
@@ -852,140 +842,176 @@ a {
     width: 82.5%;
 }
 
-.child-4 .part .saved p:nth-child(2) {
+.divided-balance .part .saved p:nth-child(2) {
     font-size: .7rem;
     font-weight: 600;
 }
 
-.child-4 .total .all .used-82 {
+.divided-balance .total .all .used-82 {
     background-color: #2b52f3;
 }
 
-.child-4 .part:nth-child(3) .all .used-82,
-.child-4 .part:nth-child(3) .all .used-82 {
+.divided-balance .part:nth-child(3) .all .used-82,
+.divided-balance .part:nth-child(3) .all .used-82 {
     background-color: #ff6900;
     width: 50%;
+    animation: animation-1 2s ease-in;
 }
-
-.child-4 .part:nth-child(3) .img {
+@keyframes animation-1 {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 50%;
+    }
+    
+}
+.divided-balance .part:nth-child(3) .img {
     background-color: #f9e7cf;
     color: #ff6900;
 }
 
-.child-4 .part:nth-child(4) .all .used-82 {
+.divided-balance .part:nth-child(4) .all .used-82 {
     background-color: #f32b2b;
     width: 100%;
+    animation: animation-2 2s ease-in;
 }
-
-.child-4 .part:nth-child(4) .img,
-.child-4 .part:nth-child(4) .saved p:nth-child(2) {
+@keyframes animation-2 {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+    
+}
+.divided-balance .part:nth-child(4) .img,
+.divided-balance .part:nth-child(4) .saved p:nth-child(2) {
     background-color: #fee2e2;
     color: #f32b2b;
 }
 
-.child-4 .part:nth-child(5) .img {
+.divided-balance .part:nth-child(5) .img {
     background-color: #fce7f3;
     color: #f6339a;
 }
 
-.child-4 .part:nth-child(5) .all .used-82 {
+.divided-balance .part:nth-child(5) .all .used-82 {
     width: 80%;
     background-color: #f6339a;
+    animation: animation-3 2s ease-in;
 }
-
-.child-4 .part:nth-child(5) .saved p:nth-child(2) {
+@keyframes animation-3  {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+    
+}
+.divided-balance .part:nth-child(5) .saved p:nth-child(2) {
     background-color: #fef3c7;
     color: #92400e;
 }
 
-.child-4 .part:nth-child(6) .all .used-82 {
+.divided-balance .part:nth-child(6) .all .used-82 {
     width: 86%;
     background-color: #04c04f;
+    animation: animation-4 2s ease-in;
 }
-
-.child-4 .part:nth-child(6) .img {
+@keyframes animation-4 {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 86%;
+    }
+    
+}
+.divided-balance .part:nth-child(6) .img {
     background-color: #b4e8c970;
     color: #04c04f;
 }
 
-.child-4 .part:hover {
+.divided-balance .part:hover {
     transform: translateY(-1px);
     box-shadow: .5px 1px 4px rgba(128, 128, 128, 0.403);
 }
 
 
-.child-5 {
-    grid-area: child-5;
+.income-vs-expense {
+    grid-area: income-vs-expense;
 }
 
-.child-5 .income-expense {
+.income-vs-expense .income-expense {
     font-weight: 600;
     justify-self: start;
 }
 
-.child-5 .income-expense .square {
+.income-vs-expense .income-expense .square {
     width: 14.4px;
     height: 14.4px;
     border-radius: 20%;
 }
 
-.child-5 .income-expense .income .square {
+.income-vs-expense .income-expense .income .square {
     background-color: #10b981;
 }
 
-.child-5 .income-expense .expense .square {
+.income-vs-expense .income-expense .expense .square {
     background-color: #ef4444;
 }
 
-.child-5 .analysis .all-charts .gruop .bars {
+.income-vs-expense .analysis .all-charts .gruop .bars {
     height: 130px;
 }
 
-.child-5 .analysis .all-charts .gruop .bars .bar {
+.income-vs-expense .analysis .all-charts .gruop .bars .bar {
     width: 25px;
     border-top-left-radius: .3125rem;
     border-top-right-radius: .3125rem;
 }
 
-.child-5 .analysis .all-charts .gruop .bars .bar-1 {
+.income-vs-expense .analysis .all-charts .gruop .bars .bar-1 {
     width: 25px;
     height: 130px;
     border-top-left-radius: .3125rem;
     border-top-right-radius: .3125rem;
 }
 
-.child-5 .analysis .all-charts .gruop .bar-1 {
+.income-vs-expense .analysis .all-charts .gruop .bar-1 {
     background-color: #10b981;
 }
 
-.child-5 .analysis .all-charts .gruop .bars .bar-2 {
+.income-vs-expense .analysis .all-charts .gruop .bars .bar-2 {
     align-self: flex-end;
     background-color: #ef4444;
     height: 70%;
 }
 
-.child-5 .analysis .all-charts .gruop:nth-child(2) .bars .bar-2 {
+.income-vs-expense .analysis .all-charts .gruop:nth-child(2) .bars .bar-2 {
     height: 30%;
 }
 
-.child-5 .analysis .all-charts .gruop:nth-child(3) .bars .bar-2 {
+.income-vs-expense .analysis .all-charts .gruop:nth-child(3) .bars .bar-2 {
     height: 40%;
 }
 
-.child-5 .analysis .all-charts .gruop:nth-child(4) .bars .bar-2 {
+.income-vs-expense .analysis .all-charts .gruop:nth-child(4) .bars .bar-2 {
     height: 45%;
 }
 
-.child-5 .analysis .all-charts .gruop .week {
+.income-vs-expense .analysis .all-charts .gruop .week {
     font-weight: 600;
     color: gray;
 }
 
-.child-6 {
-    grid-area: child-6;
+.summeryofacc {
+    grid-area: summeryofacc;
 }
 
-.child-6 .bank-info {
+.summeryofacc .bank-info {
     border-radius: .9375rem;
     border: .001px solid rgba(213, 213, 213, 0.212);
     padding: 1.25rem 1.5rem;
@@ -993,35 +1019,35 @@ a {
     background-color: #f9fafb;
 }
 
-.child-6 .bank-info .img-desc .img {
+.summeryofacc .bank-info .img-desc .img {
     border-radius: .625rem;
     font-size: 1.275rem;
     background-color: #dbeafe;
     color: #155dfc;
 }
 
-.child-6 .bank-info:nth-child(3) .img-desc .img {
+.summeryofacc .bank-info:nth-child(3) .img-desc .img {
     background-color: #dbfce7;
     color: #00a63e;
 }
 
-.child-6 .bank-info:nth-child(4) .img-desc .img {
+.summeryofacc .bank-info:nth-child(4) .img-desc .img {
     background-color: #f3e8ff;
     color: #9810fa;
 }
 
-.child-6 .bank-info .img-desc .dsec p {
+.summeryofacc .bank-info .img-desc .dsec p {
     font-size: .85rem;
     font-weight: 500;
     color: gray;
 }
 
-.child-6 .bank-info .balance {
+.summeryofacc .bank-info .balance {
     font-weight: 600;
     font-size: 1rem;
 }
 
-.child-6 .bank-info:nth-child(4) .balance {
+.summeryofacc .bank-info:nth-child(4) .balance {
     color: red;
 }
 
@@ -1029,10 +1055,10 @@ a {
 
 
 
-.child-7{
-    grid-area: child-7;
+.pay-methods{
+    grid-area: pay-methods;
 }
-.child-7 .flip-card .inner{
+.pay-methods .flip-card .inner{
     font-weight: 700;
     position: relative;
     transform-style: preserve-3d;
@@ -1041,7 +1067,7 @@ a {
 .flip-card:nth-child(2) .front-card{
     background-color: #c70036;
 }
-.child-7 .flip-card:hover .inner{
+.pay-methods .flip-card:hover .inner{
     transform:  rotateY(180deg);
 }
 .front-card {
@@ -1160,30 +1186,3 @@ a {
     border-radius: 8px;
 }
 
-
-
-
-
-
-
-
-.test-1 {
-    background-color: #82f32b;
-}
-
-.test-5 {
-    background-color: indigo;
-}
-
-.test-2 {
-    align-content: start;
-    background-color: blue;
-}
-
-.test-3 {
-    background-color: yellow;
-}
-
-.test-4 {
-    background-color: red;
-}
