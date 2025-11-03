@@ -1,0 +1,146 @@
+@media screen and (max-width:1280px) {
+    :root {
+        --boredr-rad: 20px;
+        font-size: 15px
+    }
+
+    .sidebar .side-content .services button {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .sidebar .side-content .main-page .nav-head {
+        column-gap: 0;
+    }
+
+    .sidebar .side-content .main-page .nav-head span {
+        display: flex;
+        margin-right: 3px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    i {
+        font-size: 15px;
+    }
+
+    .dashborad {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .sidebar {
+        width: 80px;
+        height: 100vh;
+    }
+
+    .nav-head {
+        width: 50px;
+        height: 50px;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .main .container {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas:
+            "header header header header header header header header header header header header"
+            "income income income income expense expense expense expense current-balance current-balance current-balance current-balance"
+            "child-1 child-1 child-1 child-1 child-1 child-1 child-5 child-5 child-5 child-5 child-5 child-5"
+            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
+            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
+            "child-3 child-3 child-3 child-3 child-3 child-3 child-6 child-6 child-6 child-6 child-6 child-6"
+            "child-4 child-4 child-4 child-4 child-4 child-4  child-7 child-7 child-7 child-7 child-7 child-7 "
+        ;
+        padding: 2rem;
+        align-content: start;
+        gap: 1.25rem;
+        width: 98%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    :root {
+        --boredr-rad: 20px;
+        font-size: 12.3px
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    :root {
+        --boredr-rad: 20px;
+        font-size: 12px
+    }
+
+    .dashborad {
+        grid-template-columns: 1px 1fr;
+    }
+
+    .sidebar {
+        display: none;
+        position: absolute;
+        right: -100%;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .main .container {
+        width: 100%;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas:
+            "header header header header header header header header header header header header"
+            "current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance"
+            "income income income income income income income income  income income income income "
+            "expense expense expense expense expense expense expense expense expense expense expense expense"
+            "child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1"
+            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
+            "child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3"
+            "child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4"
+            "child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5"
+            "child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6"
+            "child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7"
+
+        ;
+    }
+
+    .main .header {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: flex-start;
+    }
+
+    .main .header .logo-state {
+        width: 100%;
+    }
+
+    .main .header .state {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .header .tools-profile {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:640px) {
+    :root {
+        --boredr-rad: 10px;
+
+    }
+
+    .child-5 .analysis,
+    .child-6 {
+        row-gap: 20px;
+    }
+
+}
