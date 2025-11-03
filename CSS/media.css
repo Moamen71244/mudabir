@@ -48,11 +48,11 @@
         grid-template-areas:
             "header header header header header header header header header header header header"
             "income income income income expense expense expense expense current-balance current-balance current-balance current-balance"
-            "child-1 child-1 child-1 child-1 child-1 child-1 child-5 child-5 child-5 child-5 child-5 child-5"
-            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
-            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
-            "child-3 child-3 child-3 child-3 child-3 child-3 child-6 child-6 child-6 child-6 child-6 child-6"
-            "child-4 child-4 child-4 child-4 child-4 child-4  child-7 child-7 child-7 child-7 child-7 child-7 "
+            "accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense"
+            "last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals"
+            "last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals"
+            "monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc"
+            "divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance  pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods "
         ;
         padding: 2rem;
         align-content: start;
@@ -98,13 +98,13 @@
             "current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance current-balance"
             "income income income income income income income income  income income income income "
             "expense expense expense expense expense expense expense expense expense expense expense expense"
-            "child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1 child-1"
-            "child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2 child-2"
-            "child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3 child-3"
-            "child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4 child-4"
-            "child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5 child-5"
-            "child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6 child-6"
-            "child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7 child-7"
+            "accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card accounts-card"
+            "last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals last-deals"
+            "monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills monthly-bills"
+            "divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance divided-balance"
+            "income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense income-vs-expense"
+            "summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc summeryofacc"
+            "pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods pay-methods"
 
         ;
     }
@@ -139,10 +139,9 @@
 
     }
 
-    .child-5 .analysis,
-    .child-6 {
+    .income-vs-expense .analysis,
+    .summeryofacc {
         row-gap: 20px;
     }
-
 
 }
