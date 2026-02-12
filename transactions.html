@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مدبّر | المعاملات</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body data-theme="light">
+    <div id="loader">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div class="d-flex">
+      <aside class="sidebar d-flex flex-column p-2">
+        <div
+          class="d-flex align-items-center justify-content-between mb-5 mt-4 px-4"
+        >
+          <div class="d-flex align-items-center">
+            <div
+              class="bg-primary rounded-circle p-2 text-white me-3 shadow-lg"
+            >
+              <i class="fa-solid fa-coins fa-lg"></i>
+            </div>
+            <div class="nav-text">
+              <h4 class="mb-0 fw-bold">مدبّر</h4>
+              <span class="text-secondary small">Financial Manager</span>
+            </div>
+          </div>
+          <button class="btn btn-light d-lg-none" onclick="toggleSidebar()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <nav class="nav nav-pills flex-column mb-auto">
+          <a href="index.html" class="nav-link"
+            ><i class="fa-solid fa-house"></i>
+            <span class="nav-text">الرئيسية</span></a
+          >
+          <a href="transactions.html" class="nav-link active"
+            ><i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <span class="nav-text">المعاملات</span></a
+          >
+          <a href="budgets.html" class="nav-link"
+            ><i class="fa-solid fa-chart-pie"></i>
+            <span class="nav-text">الميزانيات</span></a
+          >
+          <a href="savings.html" class="nav-link"
+            ><i class="fa-solid fa-piggy-bank"></i>
+            <span class="nav-text">المدخرات</span></a
+          >
+          <a href="bills.html" class="nav-link"
+            ><i class="fa-solid fa-file-invoice-dollar"></i>
+            <span class="nav-text">الفواتير</span></a
+          >
+        </nav>
+      </aside>
+      <main class="flex-grow-1 p-lg-5 p-4 main-content">
+        <header
+          class="d-flex justify-content-between align-items-center mb-5 card border-0 p-3 shadow-soft flex-row glass"
+        >
+          <div class="d-flex align-items-center">
+            <h3 class="mb-0 fw-bold">سجل المعاملات</h3>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button
+              id="sidebar-toggle"
+              class="btn btn-light rounded-circle p-2 d-lg-none"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#newTransactionModal"
+            >
+              معاملة جديدة
+            </button>
+          </div>
+        </header>
+        <div class="card border-0 shadow-soft glass p-0 overflow-hidden">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="bg-light">
+                <tr>
+                  <th class="px-4 py-3">المعاملة</th>
+                  <th class="py-3">الفئة</th>
+                  <th class="py-3">التاريخ</th>
+                  <th class="py-3">الحالة</th>
+                  <th class="px-4 py-3 text-end">المبلغ</th>
+                </tr>
+              </thead>
+              <tbody id="transactions-body">
+                <!-- Transactions Dynamically Loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- New Transaction Modal -->
+    <div
+      class="modal fade"
+      id="newTransactionModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content card border-0 p-0 overflow-hidden">
+          <div class="modal-header border-0 p-4 pb-0">
+            <h5 class="modal-title fw-bold">إضافة معاملة جديدة</h5>
+            <button
+              type="button"
+              class="btn-close ms-0"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <form id="add-transaction-form">
+              <div class="mb-3">
+                <label class="form-label">الاسم / المتجر</label>
+                <input type="text" name="name" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">الفئة</label>
+                <select name="category" class="form-select" required>
+                  <option value="طعام">طعام ومشتريات</option>
+                  <option value="صحة">صحة</option>
+                  <option value="ترفيه">ترفيه</option>
+                  <option value="دخل">دخل / راتب</option>
+                  <option value="أخرى" selected>أخرى</option>
+                </select>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <label class="form-label">المبلغ</label
+                  ><input
+                    type="number"
+                    name="amount"
+                    class="form-control"
+                    placeholder="استخدم - للمصاريف"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label class="form-label">التاريخ</label
+                  ><input
+                    type="date"
+                    name="date"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 py-2">
+                تسجيل المعاملة
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="JS/main.js"></script>
+  </body>
+</html>
